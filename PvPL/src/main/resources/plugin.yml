@@ -1,6 +1,7 @@
 name: PvPL
-main: me.grantswim4.PvPL.Main
+main: me.GRANTSWIM4.PvPL.Main
 version: 1.0
- PVPL.PVPN:
+permissions:
+    PVPL.PVPN:
         description: Lets you know who just PvP logged
         default: op
