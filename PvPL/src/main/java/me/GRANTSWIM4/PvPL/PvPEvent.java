@@ -44,7 +44,8 @@ public class PvPEvent implements Listener
 		// If someone PvP logs goes here	
 			for (Player player: Bukkit.getServer().getOnlinePlayers()) {
 			    if (player.hasPermission("PVPN")) {
-			        player.sendMessage( p.getName() + "hads just PvPLogged");
+			        player.sendMessage(ChatColor.RED + "PvPLogging:" + ChatColor.BOLD + p.getName() + ChatColor.RESET + "hads just PvPLogged! ");
+			    
 			    }
 			}	
 		}
@@ -105,4 +106,6 @@ public class PvPEvent implements Listener
 			}, 1000L);
 		}
 	}
+	
+	
 }
