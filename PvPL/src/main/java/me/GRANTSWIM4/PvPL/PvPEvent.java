@@ -2,6 +2,7 @@ package me.GRANTSWIM4.PvPL;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,6 +12,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,20 @@ public class PvPEvent implements Listener
 	{
 		this.plugin = plugin;
 	}
+	File configurationConfig;
+	 public FileConfiguration config; 
+	public void savec() {
+		  try {
+		   config.save(configurationConfig);
 
+		  } catch (Exception e) {
+		   e.printStackTrace();
+		  }
+		 }
+	 public void loadConfig() {
+		  plugin.saveConfig();
+
+		 }
 	/**
 	 * Quit event.
 	 */
@@ -44,10 +59,13 @@ public class PvPEvent implements Listener
 		// If someone PvP logs goes here	
 			for (Player player: Bukkit.getServer().getOnlinePlayers()) {
 			    if (player.hasPermission("PVPN")) {
-			        player.sendMessage(ChatColor.RED + "PvPLogging:" + ChatColor.BOLD + p.getName() + ChatColor.RESET + "hads just PvPLogged! ");
-			    
+			        player.sendMessage(ChatColor.RED + "PvPLogging:" + ChatColor.RESET + ChatColor.BOLD + p.getName() + ChatColor.RESET + " hads just PvPLogged! ");
+			   	 if(antilog.contains(p.getName()));			   			 
+			   			 
+			   	antilog.remove(p.getName());
 			    }
 			}	
+			
 		}
 	}
 
@@ -105,7 +123,7 @@ public class PvPEvent implements Listener
 				}
 			}, 1000L);
 		}
+		}
 	}
 	
 	
-}

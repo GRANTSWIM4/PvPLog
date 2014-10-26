@@ -1,6 +1,14 @@
 package me.GRANTSWIM4.PvPL;
 
+
+
+import java.io.File;
+
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+
+
 
 public final class Main extends JavaPlugin
 {
@@ -11,7 +19,13 @@ public void onEnable()
 	{
 		// Welcome message
 		getLogger().info("Protecting your server form PvP logger since 2014!");
+       // Loading the YML File
+		 configurationConfig = new File(getDataFolder(), "config.yml");
+		  config = YamlConfiguration.loadConfiguration(configurationConfig);
+		  
+		 
 
+			
 		// Register events
 		getServer().getPluginManager().registerEvents(new PvPEvent(this), this);
 	}
