@@ -3,4 +3,4 @@ main: me.grantswim4.PvPL.Main
 version: 1.0
 permissions:
     PVPN:
-        description: Lets you know who PvP logging
+        description: Lets you know who's PvP logging
