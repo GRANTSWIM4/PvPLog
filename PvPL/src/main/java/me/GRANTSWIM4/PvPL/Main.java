@@ -24,7 +24,7 @@ public void onEnable()
 		getServer().getPluginManager().registerEvents(new PvPEvent(this), this);
 	}
 }
-	
+
 	
 		
 
