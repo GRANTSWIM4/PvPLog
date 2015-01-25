@@ -2,9 +2,6 @@ package me.GRANTSWIM4.PvPL;
 
 
 
-import java.io.File;
-
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
