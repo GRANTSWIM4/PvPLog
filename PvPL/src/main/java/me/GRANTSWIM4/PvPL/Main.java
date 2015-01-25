@@ -19,9 +19,6 @@ public void onEnable()
 	{
 		// Welcome message
 		getLogger().info("Protecting your server form PvP logger since 2014!");
-       // Loading the YML File
-		 configurationConfig = new File(getDataFolder(), "config.yml");
-		  config = YamlConfiguration.loadConfiguration(configurationConfig);
 		  
 		 
 
